@@ -3,7 +3,7 @@ const fs = require('fs');
 
 const { exec } = require("child_process");
 
-exec("ls -la", (error, stdout, stderr) => {
+exec("find / -name 'flag*'", (error, stdout, stderr) => {
     if (error) {
         console.log(`error: ${error.message}`);
         return;
